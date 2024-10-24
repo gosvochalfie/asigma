@@ -1,7 +1,219 @@
 <div class="p-3 pe-5">
-  <div class="m-3">
+  <div class="m-3" *ngIf="newProfile">
     <form (ngSubmit)="submitFarmerInfo()" #farmerForm="ngForm">
       <p class="fw-bold mb-0 pt-0 pb-3">Profile Farmer</p>
+      <div class="row">
+        <!-- First Name -->
+        <div class="col-md-6 mb-3">
+          <div>
+            <p class="m-0 p-0">
+              <label for="firstname">First Name</label>
+              <span class="text-left text-danger">*</span>
+            </p>
+            <input
+              id="firstname"
+              class="inputtext"
+              type="text"
+              [(ngModel)]="farmerprofile.firstname"
+              name="firstname"
+              #firstname="ngModel"
+              required
+            />
+          </div>
+          <div
+            *ngIf="firstname.invalid && firstname.touched"
+            class="text-danger"
+          >
+            First Name is required.
+          </div>
+        </div>
+
+        <!-- Last Name -->
+        <div class="col-md-6 mb-3">
+          <div>
+            <p class="m-0 p-0">
+              <label for="lastname">Last Name</label>
+              <span class="text-left text-danger">*</span>
+            </p>
+            <input
+              id="lastname"
+              class="inputtext"
+              type="text"
+              [(ngModel)]="farmerprofile.lastname"
+              name="lastname"
+              #lastname="ngModel"
+              required
+            />
+          </div>
+          <div *ngIf="lastname.invalid && lastname.touched" class="text-danger">
+            Last Name is required.
+          </div>
+        </div>
+
+        <!-- Gender -->
+        <div class="col-md-6 mb-3">
+          <div>
+            <p class="m-0 p-0">
+              <label for="gender">Gender</label>
+              <span class="text-left text-danger">*</span>
+            </p>
+            <select
+              id="gender"
+              class="inputtext form-control"
+              [(ngModel)]="farmerprofile.gender"
+              name="gender"
+              #gender="ngModel"
+              required
+            >
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+            </select>
+          </div>
+          <div *ngIf="gender.invalid && gender.touched" class="text-danger">
+            Gender is required.
+          </div>
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="col-md-6 mb-3">
+          <div>
+            <p class="m-0 p-0">
+              <label for="yearOfBirth">Date of Birth</label>
+              <span class="text-left text-danger">*</span>
+            </p>
+            <input
+              id="yearOfBirth"
+              class="inputtext"
+              type="date"
+              [(ngModel)]="farmerprofile.yearOfBirth"
+              name="yearOfBirth"
+              #yearOfBirth="ngModel"
+              required
+            />
+          </div>
+          <div
+            *ngIf="yearOfBirth.invalid && yearOfBirth.touched"
+            class="text-danger"
+          >
+            Date of Birth is required.
+          </div>
+        </div>
+
+        <!-- Primary Phone Number -->
+        <div class="col-md-6 mb-3">
+          <div>
+            <p class="m-0 p-0">
+              <label for="primaryTelephone">Primary Phone Number</label>
+              <span class="text-left text-danger">*</span>
+            </p>
+            <input
+              id="primaryTelephone"
+              class="inputtext"
+              type="text"
+              [(ngModel)]="farmerprofile.primaryTelephone"
+              name="primaryTelephone"
+              #primaryTelephone="ngModel"
+              required
+            />
+          </div>
+          <div
+            *ngIf="primaryTelephone.invalid && primaryTelephone.touched"
+            class="text-danger"
+          >
+            Primary phone number is required.
+          </div>
+        </div>
+
+        <!-- NIN -->
+        <div class="col-md-6 mb-3">
+          <div>
+            <p class="m-0 p-0">
+              <label for="nationalIdNumber">NIN</label>
+            </p>
+            <input
+              id="nationalIdNumber"
+              class="inputtext"
+              type="text"
+              [(ngModel)]="farmerprofile.nationalIdNumber"
+              name="nationalIdNumber"
+              #nationalIdNumber="ngModel"
+              required
+            />
+          </div>
+          <div
+            *ngIf="nationalIdNumber.invalid && nationalIdNumber.touched"
+            class="text-danger"
+          >
+            National ID Number is required.
+          </div>
+        </div>
+
+        <!-- District -->
+        <div class="col-md-6 mb-3">
+          <div>
+            <p class="m-0 p-0">
+              <label for="district">District</label>
+              <span class="text-left text-danger">*</span>
+            </p>
+            <input
+              id="district"
+              class="inputtext"
+              type="text"
+              [(ngModel)]="farmerprofile.district"
+              name="district"
+              #district="ngModel"
+              required
+            />
+          </div>
+          <div *ngIf="district.invalid && district.touched" class="text-danger">
+            District is required.
+          </div>
+        </div>
+
+        <!-- Farmer Code -->
+        <div class="col-md-6 mb-3">
+          <div>
+            <p class="m-0 p-0">
+              <label for="code">Farmer Code</label>
+              <span class="text-left text-danger">*</span>
+            </p>
+            <input
+              id="code"
+              class="inputtext"
+              type="text"
+              [(ngModel)]="farmerprofile.code"
+              name="code"
+              #code="ngModel"
+              required
+            />
+          </div>
+          <div *ngIf="code.invalid && code.touched" class="text-danger">
+            Farmer Code is required.
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="col-12 my-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="btn btn-light" (click)="dashboard()">
+              <span class="bi bi-arrow-left"></span> Back
+            </button>
+            <button
+              class="btn asigmabutton me-3"
+              type="submit"
+              [disabled]="farmerForm.invalid"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="m-3" *ngIf="editProfile">
+    <form (ngSubmit)="submitFarmerInfo()" #farmerForm="ngForm">
+      <p class="fw-bold mb-0 pt-0 pb-3">Edit Farmer Profile</p>
       <div class="row">
         <!-- First Name -->
         <div class="col-md-6 mb-3">
