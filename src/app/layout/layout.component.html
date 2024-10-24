@@ -1,0 +1,41 @@
+<div class="container-fluid p-0">
+  <div class="row">
+    <div class="sidebar vh-100 border-0 col-md-2 m-0 p-0 bg-asigmagreen">
+      <div class="p-3 text-center">
+        <img
+          src="/logo.png"
+          class="sidelogo text-center mx-auto"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div class="m-0">
+        <ul class="nav m-0 p-0 flex-column bg-asigmagreen">
+          <li class="nav-item border-0">
+            <a class="nav-link border-0 bg-asigmagreenhover text-white">
+              <i class="ms-3 bi bi-people-fill me-3"></i>
+              Farmers
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <main class="col-md-10 p-0 m-0">
+      <header class="navbar p-0 m-0 d-flex justify-content-end">
+        <ul class="navbar-nav border-0">
+          <li class="nav-item fw-bold text-nowrap border-0">
+            <span class="me-3"
+              ><img src="bell.png" class="notification" alt="" srcset="" />
+            </span>
+            Welcome, <span class="fw-normal">{{ username }}</span>
+            <span class="ms-2 bi bi-person-circle"></span>
+          </li>
+        </ul>
+      </header>
+      <div class="bg-asigmalightgrey vh-100">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
+</div>

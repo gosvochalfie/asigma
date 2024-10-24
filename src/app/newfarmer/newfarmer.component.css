@@ -1,0 +1,17 @@
+.inputtext {
+  width: 100%;
+  border: 1px solid #cacaca !important;
+}
+
+form {
+  padding: 20px;
+  background-color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+.swal-right-position {
+  position: absolute !important;
+  right: 20px !important;
+  top: 100px !important;
+  transform: none !important;
+}
