@@ -21,7 +21,7 @@ export class NewfarmerComponent {
     lastModifiedBy: '',
     dateUpdated: '',
     isDeleted: false,
-    firstname: 'Sigma Farmer',
+    firstname: '',
     lastname: '',
     gender: '',
     levelOfEducation: '',
