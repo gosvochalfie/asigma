@@ -57,9 +57,7 @@ export class NewfarmerComponent {
   sendFarmerProfileUrl: string =
     'https://test.profiles.symos.asigmagroup.com/api/v1/farmers';
 
-    captureNewFarmerProfile():void{
-
-    }
+  
 
     submitFarmerInfo(): void {
       try {

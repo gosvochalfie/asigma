@@ -96,7 +96,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let farmer of farmerList">
             <td class="border-0">
               <div class="checkbox border-0">
                 <input type="checkbox" />
@@ -110,76 +110,18 @@
                   </div>
                 </div>
                 <div class="col-md-9">
-                  <div>Samuel Nantale</div>
-                  <div style="font-size: 0.9em; color: gray">(Code: F001)</div>
-                </div>
-              </div>
-            </td>
-            <td>Wakiso</td>
-            <td>Male</td>
-            <td>34</td>
-            <td>0771234567</td>
-            <td>1234567890</td>
-            <td>
-              <button class="btn border-0">
-                <span class="bi bi-eye h4"></span>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td class="border-0">
-              <div class="checkbox border-0">
-                <input type="checkbox" />
-              </div>
-            </td>
-            <td>
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="m-1 smallicon rounded-2">
-                    <span class="bi bi-person-fill text-white"></span>
+                  <div>{{ farmer.firstname }} {{ farmer.lastname }}</div>
+                  <div style="font-size: 0.9em; color: gray">
+                    (Code: {{ farmer.code }})
                   </div>
                 </div>
-                <div class="col-md-9">
-                  <div>Samuel Nantale</div>
-                  <div style="font-size: 0.9em; color: gray">(Code: F001)</div>
-                </div>
               </div>
             </td>
-            <td>Wakiso</td>
-            <td>Male</td>
-            <td>34</td>
-            <td>0771234567</td>
-            <td>1234567890</td>
-            <td>
-              <button class="btn border-0">
-                <span class="bi bi-eye h4"></span>
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td class="border-0">
-              <div class="checkbox border-0">
-                <input type="checkbox" />
-              </div>
-            </td>
-            <td>
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="m-1 smallicon rounded-2">
-                    <span class="bi bi-person-fill text-white"></span>
-                  </div>
-                </div>
-                <div class="col-md-9">
-                  <div>Samuel Nantale</div>
-                  <div style="font-size: 0.9em; color: gray">(Code: F001)</div>
-                </div>
-              </div>
-            </td>
-            <td>Wakiso</td>
-            <td>Male</td>
-            <td>34</td>
-            <td>0771234567</td>
-            <td>1234567890</td>
+            <td>{{ farmer.district }}</td>
+            <td>{{ farmer.gender }}</td>
+            <td>{{ calculateAge(farmer.yearOfBirth) }}</td>
+            <td>{{ farmer.primaryTelephone }}</td>
+            <td>{{ farmer.nationalIdNumber }}</td>
             <td>
               <button class="btn border-0">
                 <span class="bi bi-eye h4"></span>
