@@ -40,6 +40,16 @@ export class DashboardComponent {
       nationalIdNumber: '1234567891',
       code: 'F002',
     },
+    {
+      firstname: 'John',
+      lastname: 'Mukasa',
+      district: 'Mbarara',
+      gender: 'Male',
+      yearOfBirth: '1982',
+      primaryTelephone: '0789123456',
+      nationalIdNumber: '1234567892',
+      code: 'F003',
+    }
   
   ];
 
